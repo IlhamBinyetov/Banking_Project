@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Banking_Project.DataAccessLayer\Banking_Project.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Banking_Project.EntityLayer\Banking_Project.EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>
