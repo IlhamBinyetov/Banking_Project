@@ -25,12 +25,15 @@ namespace Banking_Project.PresentationLayer.Controllers
         {
             if (ModelState.IsValid)
             {
+                Random random = new Random();
+                
                 AppUser appUser = new AppUser()
                 {
                     UserName = appUserRegisterDto.UserName,
                     Name = appUserRegisterDto.Name,
                     SurName = appUserRegisterDto.SurName,
-                    Email = appUserRegisterDto.Email
+                    Email = appUserRegisterDto.Email,
+                    ConfirmCode = random.Next(100000, 1000000)
                 };
                 var result = await _userManager.CreateAsync(appUser, appUserRegisterDto.Password);
                 if (result.Succeeded)
