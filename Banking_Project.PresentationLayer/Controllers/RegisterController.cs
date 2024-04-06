@@ -42,7 +42,7 @@ namespace Banking_Project.PresentationLayer.Controllers
                 var result = await _userManager.CreateAsync(appUser, appUserRegisterDto.Password);
                 if (result.Succeeded)
                 {
-                    // Mail Process
+                    // Mail Process 
                     MimeMessage mimeMessage = new MimeMessage();
                     MailboxAddress mailboxAddressFrom = new MailboxAddress("Banking_Project", "ilhamgb@code.edu.az");
                     MailboxAddress mailboxAddressTo = new MailboxAddress("User", appUser.Email);
