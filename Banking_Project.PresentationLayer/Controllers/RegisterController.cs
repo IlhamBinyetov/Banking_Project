@@ -57,7 +57,8 @@ namespace Banking_Project.PresentationLayer.Controllers
                     client.Authenticate("ilhamgb@code.edu.az", "");
                     client.Send(mimeMessage);
                     client.Disconnect(true);
-                    
+
+                    TempData["Mail"] = appUserRegisterDto.Email;
 
                     return RedirectToAction("Index", "ConfirmMail");
                 }
