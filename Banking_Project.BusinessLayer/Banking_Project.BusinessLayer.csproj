@@ -24,8 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Banking_Project.DataAccessLayer\Banking_Project.DataAccessLayer.csproj" />
-    <ProjectReference Include="..\Banking_Project.DtoLayer\Banking_Project.DtoLayer.csproj" />
-    <ProjectReference Include="..\Banking_Project.EntityLayer\Banking_Project.EntityLayer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
