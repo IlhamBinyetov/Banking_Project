@@ -13,7 +13,7 @@ namespace Banking_Project.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.;initial catalog=BankingProjectDB;integrated Security=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-1AOIQON;initial catalog=BankingProjectDB;integrated Security=true");
         }
 
         public DbSet<CustomerAccount> CustomerAccounts { get; set; }
