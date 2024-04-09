@@ -170,7 +170,7 @@ namespace Banking_Project.DataAccessLayer.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("CustomerAccounts");
+                    b.ToTable("CustomerAccounts", (string)null);
                 });
 
             modelBuilder.Entity("Banking_Project.EntityLayer.Concrete.CustomerAccountProcess", b =>
@@ -193,7 +193,7 @@ namespace Banking_Project.DataAccessLayer.Migrations
 
                     b.HasKey("CustomerAccountProcessId");
 
-                    b.ToTable("CustomerAccountProcesses");
+                    b.ToTable("CustomerAccountProcesses", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
