@@ -1,4 +1,4 @@
-﻿
+﻿@model ConfirmMailViewModel
 @{
     Layout = null;
 }
@@ -11,8 +11,13 @@
     <br />
     <br />
     <form method="post">
+        <h2>Mail Address : @ViewBag.v</h2>
+        <br />
+        <label>User Id</label>
+        <input type="text" class="form-control" asp-for="Mail" value="@ViewBag.v" />
+        <br />
         <label>Enter the code received in your mail adress</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" asp-for="ConfirmCode" />
         <br />
         <button class="btn btn-primary">Activate your account </button>
     </form>

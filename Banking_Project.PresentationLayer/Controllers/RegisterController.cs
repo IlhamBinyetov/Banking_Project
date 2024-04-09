@@ -54,7 +54,7 @@ namespace Banking_Project.PresentationLayer.Controllers
                     mimeMessage.Subject = "Banking_Project Confirm Code";
                     SmtpClient client = new SmtpClient();
                     client.Connect("smtp.gmail.com",587,false);
-                    client.Authenticate("ilhamgb@code.edu.az", "");
+                    client.Authenticate("ilhamgb@code.edu.az", "dyfgsqunvbqczfmf");
                     client.Send(mimeMessage);
                     client.Disconnect(true);
 
