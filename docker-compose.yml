@@ -1,0 +1,17 @@
+﻿version: '3.8'
+
+services:
+  s_banking:
+    container_name: c_banking 
+    image: image_banking
+    build:
+      context: .
+      dockerfile: ./Banking_Project.PresentationLayer/Dockerfile
+    ports:
+      - "1053:80"
+    networks:
+      - sql-network
+      
+networks:
+  sql-network:
+    external: true
