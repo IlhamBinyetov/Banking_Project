@@ -29,7 +29,7 @@ namespace Banking_Project.PresentationLayer.Controllers
                 var user = await _userManager.FindByNameAsync(viewModel.UserName);
                 if (user.EmailConfirmed)
                 {
-                    return RedirectToAction("Index", "MyProfile");
+                    return RedirectToAction("Index", "MyAccounts");
                 }  
             }
             return View();
