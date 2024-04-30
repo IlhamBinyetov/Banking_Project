@@ -16,5 +16,6 @@ namespace Banking_Project.EntityLayer.Concrete
         public int? ReceiverId { get; set; }
         public CustomerAccount SenderCustomer { get; set; }
         public CustomerAccount ReceiverCustomer { get; set; }
+        public string Description { get; set; }
     }
 }

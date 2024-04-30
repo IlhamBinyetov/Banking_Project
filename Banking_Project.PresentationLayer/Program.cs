@@ -1,4 +1,8 @@
+using Banking_Project.BusinessLayer.Abstract;
+using Banking_Project.BusinessLayer.Concrete;
+using Banking_Project.DataAccessLayer.Abstract;
 using Banking_Project.DataAccessLayer.Concrete;
+using Banking_Project.DataAccessLayer.EntityFramework;
 using Banking_Project.EntityLayer.Concrete;
 using Banking_Project.PresentationLayer.Models;
 using Microsoft.AspNetCore.Identity;
@@ -9,6 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+
+builder.Services.AddScoped<ICustomerAccountProcessDal,EfCustomerAccountProcessDal>();
+builder.Services.AddScoped<ICustomerAccountProcessService,CustomerAccountProcessManager>();
 
 var app = builder.Build();
 
