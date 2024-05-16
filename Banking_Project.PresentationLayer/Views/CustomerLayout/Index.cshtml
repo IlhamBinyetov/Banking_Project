@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -10,16 +9,14 @@
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-          
+
             @await Component.InvokeAsync("_CustomerLayoutSidebarPartial")
             <!-- top navigation -->
             @await Component.InvokeAsync("_CustomerLayoutNavbarPartial")
             <!-- /top navigation -->
-            <!-- page content --> 
-            <div class="right_col" role="main">
-                <div class="">
-                          @RenderBody()
-                </div>
+            <!-- page content -->
+            <div class="" role="main">
+                @RenderBody()
             </div>
             <!-- /page content -->
             <!-- footer content -->

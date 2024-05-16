@@ -20,8 +20,9 @@ namespace Banking_Project.PresentationLayer.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string mycurrency)
         {
+            ViewBag.currency = mycurrency;
             return View();
         }
 
@@ -32,14 +33,18 @@ namespace Banking_Project.PresentationLayer.Controllers
 
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             var receiverAccountNumberId = context.CustomerAccounts.Where(s => s.CustomerAccountNumber == processDto.ReceiverAccountNumber).Select(x => x.CustomerAccountId).FirstOrDefault();
+            var senderAccountNumberId = context.CustomerAccounts.Where(x=>x.AppUserId == user.Id).Where(y=>y.CustomerAccountCurrency == "").Select(x => x.CustomerAccountId).FirstOrDefault();
+  
 
-            processDto.SenderId = user.Id;
-            processDto.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            processDto.ProcessType = "Transfer";
-            processDto.ReceiverId = receiverAccountNumberId;
+            var values = new CustomerAccountProcess();
+            values.ProcessDate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            values.SenderId = 1;
+            values.ProcessType = "Transfer";
+            values.ReceiverId = receiverAccountNumberId;
+            values.Amount = processDto.Amount;
+            values.Description = processDto.Description; 
 
-
-           // _customerAccountProcessService.TInsert();
+           _customerAccountProcessService.TInsert(values);
 
             return RedirectToAction("Index","Test");
         }
