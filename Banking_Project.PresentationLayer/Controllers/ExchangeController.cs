@@ -85,6 +85,8 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                 ViewBag.UsdToEur = body4;
             }
             #endregion
+
+
             return View();
         }
     }
