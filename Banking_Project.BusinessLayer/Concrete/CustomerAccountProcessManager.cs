@@ -17,6 +17,12 @@ namespace Banking_Project.BusinessLayer.Concrete
         {
             _customerAccountProcessDal = customerAccountProcessDal;
         }
+
+        public List<CustomerAccountProcess> TMyLastProcess(int id)
+        {
+            return _customerAccountProcessDal.MyLastProcess(id);
+        }
+
         public void TDelete(CustomerAccountProcess t)
         {
             _customerAccountProcessDal.Delete(t);
